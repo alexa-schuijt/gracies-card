@@ -1,0 +1,527 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: white;
+    background: linear-gradient(180deg,
+            #020b2d,
+            #041b4d,
+            #063a80,
+            #021735);
+
+    overflow-x: hidden;
+}
+
+
+/* ================= STARS ================= */
+
+#stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(#7dc8ff 1px, transparent 1px);
+
+    background-size:
+        80px 80px,
+        120px 120px;
+
+    background-position:
+        0 0,
+        40px 40px;
+
+    opacity: .35;
+    animation: starsMove 60s linear infinite;
+
+    z-index: -1;
+}
+
+
+@keyframes starsMove {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-500px);
+    }
+
+}
+
+
+/* ================= SECTIONS ================= */
+
+section {
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px;
+
+}
+
+
+/* ================= HERO ================= */
+
+.hero h1 {
+
+    font-size: clamp(3rem, 8vw, 5rem);
+
+    font-weight: 700;
+
+    text-shadow:
+        0 0 20px #4db8ff,
+        0 0 40px #0077ff;
+
+}
+
+
+.subtitle {
+
+    margin-top: 20px;
+
+    font-size: 1.3rem;
+
+    font-weight: 300;
+
+    opacity: .9;
+
+}
+
+
+button {
+
+    margin-top: 35px;
+
+    padding: 15px 35px;
+
+    border-radius: 50px;
+
+    border: none;
+
+    cursor: pointer;
+
+    color: white;
+
+    background:
+        linear-gradient(135deg,
+            #008cff,
+            #0051ff);
+
+
+    font-size: 1rem;
+
+    box-shadow:
+        0 0 20px #008cff;
+
+
+    transition: .3s;
+
+}
+
+
+button:hover {
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 40px #00b7ff;
+
+}
+
+
+
+/* ================= HIDDEN ANIMATION ================= */
+
+
+.hidden {
+
+    opacity: 0;
+
+    transform: translateY(50px);
+
+    pointer-events: none;
+
+}
+
+
+.show {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+
+    transition:
+        1.5s ease;
+
+}
+
+
+
+/* ================= MUSIC ================= */
+
+
+.musicSection h2,
+#gallery h2,
+.letter h2,
+.cakeSection h2 {
+
+    font-size: 2.5rem;
+
+    margin-bottom: 40px;
+
+    text-shadow:
+        0 0 15px #4db8ff;
+
+}
+
+
+
+/* ================= PHOTO GALLERY ================= */
+
+
+.gallery {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 30px;
+
+    width: 90%;
+
+    max-width: 1100px;
+
+}
+
+
+
+.photo {
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255, 255, 255, .1);
+
+    padding: 10px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 0 25px rgba(0, 140, 255, .4);
+
+
+    transition: .5s;
+
+}
+
+
+
+.photo img {
+
+    width: 100%;
+
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+}
+
+
+
+.photo:hover {
+
+    transform:
+        translateY(-15px) scale(1.03);
+
+}
+
+
+
+/* ================= LETTER ================= */
+
+
+.letter p {
+
+    max-width: 700px;
+
+    font-size: 1.3rem;
+
+    line-height: 2;
+
+    background:
+
+        rgba(255, 255, 255, .1);
+
+
+    padding: 40px;
+
+    border-radius: 30px;
+
+
+    backdrop-filter: blur(10px);
+
+
+    box-shadow:
+        0 0 30px rgba(0, 140, 255, .5);
+
+}
+
+
+
+/* ================= CAKE ================= */
+
+
+#cake {
+
+    font-size: 8rem;
+
+    cursor: pointer;
+
+    position: relative;
+
+    transition: .5s;
+
+}
+
+
+
+#cake:hover {
+
+    transform: scale(1.1);
+
+}
+
+
+
+#flame {
+
+    width: 25px;
+
+    height: 40px;
+
+    background: #ffe066;
+
+    border-radius:
+        50% 50% 50% 50%;
+
+    position: absolute;
+
+    top: 5px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    animation: flicker .5s infinite alternate;
+
+}
+
+
+
+@keyframes flicker {
+
+    from {
+
+        transform:
+            translateX(-50%) scale(1);
+
+    }
+
+
+    to {
+
+        transform:
+            translateX(-50%) scale(.8);
+
+    }
+
+}
+
+
+
+.blown {
+
+    display: none;
+
+}
+
+
+/* ================= FINALE ================= */
+
+
+.finale h1 {
+
+    font-size:
+        clamp(2.5rem, 7vw, 5rem);
+
+
+    text-shadow:
+
+        0 0 20px #00b7ff,
+        0 0 50px #0077ff;
+
+
+    animation:
+        pulse 2s infinite;
+
+}
+
+
+
+.finale p {
+
+    margin-top: 30px;
+
+    font-size: 1.4rem;
+
+}
+
+
+
+@keyframes pulse {
+
+    50% {
+
+        transform: scale(1.05);
+
+    }
+
+}
+
+
+
+/* ================= MOBILE ================= */
+
+
+@media(max-width:600px) {
+
+
+    section {
+
+        padding: 20px;
+
+    }
+
+
+    .letter p {
+
+        font-size: 1rem;
+
+        padding: 25px;
+
+    }
+
+
+    #cake {
+
+        font-size: 6rem;
+
+    }
+
+}
+
+
+/* ================= MINI GAME ================= */
+
+
+.game h2 {
+
+    font-size: 2.5rem;
+
+}
+
+
+#gameArea {
+
+    position: relative;
+
+    width: 90%;
+
+    max-width: 700px;
+
+    height: 400px;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255, 255, 255, .1);
+
+    backdrop-filter: blur(10px);
+
+    margin-top: 30px;
+
+}
+
+
+.balloon {
+
+    position: absolute;
+
+    font-size: 3rem;
+
+    cursor: pointer;
+
+    animation: floatUp 5s linear;
+
+}
+
+
+@keyframes floatUp {
+
+
+    from {
+
+        transform:
+            translateY(450px);
+
+    }
+
+
+    to {
+
+        transform:
+            translateY(-100px);
+
+    }
+
+
+}
+
+
+#winMessage {
+
+    margin-top: 30px;
+
+    font-size: 1.8rem;
+
+    text-shadow:
+        0 0 20px #00b7ff;
+
+}
